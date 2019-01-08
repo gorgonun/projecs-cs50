@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% set counter = [] %}
+{% set s1 = " " + s1 %}
+{% set s2 = " " + s2 %}
+
+{% block body %}
+<table class="table table-sm">
+    <tbody>
+        <tr>
+            <th> </th>
+            {% for char in s1 %}
+            <th>{{ char }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in matrix %}
+            <tr>
+                <th>{{ s2[counter|length] }}</th>
+                {% for cell in row %}
+                    <td>{{ cell[0] }}</td>
+                {% endfor %}
+            </tr>
+            {% if counter.append(1) %} {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
