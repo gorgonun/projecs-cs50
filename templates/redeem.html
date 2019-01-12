@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    {% if success %}
+        <h1>Gift card successfully redeemed!</h1>
+    {% endif %}
+    <form method="POST">
+        <div class="form-group">
+            <input class="form-control" type="text" name="giftCard" placeholder="Gift code" required/>
+        </div>
+        <input type="submit" name="Redeem"/>
+    </form>
+{% endblock %}
