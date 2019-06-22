@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+    {% block main %}
+        {% if check %}
+            <div class="container">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Symbol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col">{{ check.name }}</td>
+                            <td class="col">{{ check.price }}</td>
+                            <td class="col">{{ check.symbol }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="container">
+                <form method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Stock symbol" name="symbol" required/>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Check</button>
+                </form>
+            </div>
+        {% endif %}
+    {% endblock %}

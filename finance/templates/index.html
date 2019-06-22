@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="container p-5">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Number of shares</th>
+                    <th>Current price</th>
+                    <th>Total value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if result %}
+                    {% for item in result %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.current_price }}</td>
+                            <td>{{ item.total_value }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+                <tr>
+                    <td>Cash</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ cash }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ estimated }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
